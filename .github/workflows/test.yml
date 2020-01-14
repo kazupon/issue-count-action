@@ -1,0 +1,46 @@
+name: Tests
+
+on: 
+  push:
+    branches:
+      - master
+      - releases/**
+  pull_request:
+    branches:
+      - master
+      - releases/**
+
+jobs:
+  test:
+    name: Test on ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ['10.x', '12.x']
+
+    - name: Get npm cache directory
+      id: npm-cache
+      run: |
+        echo "::set-output name=dir::$(npm config get cache)"
+    - uses: actions/cache@v1
+      with:
+        path: ${{ steps.npm-cache.outputs.dir }}
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - run: npm ci
+
+    - name: Build 
+      run: npm run build
+
+    - name: Test
+      run: npm run test
