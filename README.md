@@ -2,7 +2,7 @@
 
 An Action to count GitHub issues
 
-![](https://github.com/kazupon/issue-count/workflows/test/badge.svg)
+![](https://github.com/kazupon/issue-count/workflows/Tests/badge.svg)
 
 > :warning: WIP
 
