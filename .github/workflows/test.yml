@@ -40,8 +40,5 @@ jobs:
           ${{ runner.os }}-node-
     - run: npm ci
 
-    - name: Build 
-      run: npm run build
-
     - name: Test
       run: npm run test
