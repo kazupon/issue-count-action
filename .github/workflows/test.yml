@@ -17,6 +17,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
+        node: [10, 12]
 
     runs-on: ${{ matrix.os }}
 
@@ -25,7 +26,7 @@ jobs:
 
     - uses: actions/setup-node@v1
       with:
-        node-version: ['10.x', '12.x']
+        node-version: ${{ matrix.node }}
 
     - name: Get npm cache directory
       id: npm-cache
