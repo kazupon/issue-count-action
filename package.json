@@ -24,12 +24,27 @@
     }
   },
   "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.6",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "@typescript-eslint/typescript-estree": "^2.16.0",
+    "@zeit/ncc": "^0.21.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue-libs": "^4.0.0",
+    "jest": "^24.9.0",
+    "jest-watch-typeahead": "^0.4.2",
     "lerna-changelog": "^1.0.0",
-    "shipjs": "^0.13.1"
+    "opener": "^1.5.1",
+    "shipjs": "^0.13.1",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.4",
+    "typescript-eslint-language-service": "^2.0.3"
   },
   "homepage": "https://github.com/kazupon/issue-count#readme",
   "keywords": [
     "actions",
+    "github",
     "issues"
   ],
   "license": "MIT",
@@ -40,9 +55,17 @@
     "url": "git+https://github.com/kazupon/issue-count.git"
   },
   "scripts": {
-    "build": "echo 'build!'",
+    "build": "tsc -p .",
+    "build:watch": "tsc -p . --watch",
+    "pack": "ncc build lib/index.js",
+    "clean": "rm -rf ./coverage",
+    "coverage": "opener coverage/lcov-report/index.html",
+    "lint": "eslint ./src --ext .ts",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger",
-    "test": "echo 'test!'"
+    "test": "npm run lint && npm run test:cover && npm run build",
+    "test:cover": "npm run test:unit -- --coverage",
+    "test:unit": "jest --env node",
+    "test:watch": "jest --env node --watch"
   }
 }
