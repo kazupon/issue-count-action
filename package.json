@@ -57,7 +57,7 @@
   "scripts": {
     "build": "tsc -p .",
     "build:watch": "tsc -p . --watch",
-    "pack": "ncc build lib/index.js",
+    "pack": "npm run build && ncc build lib/index.js",
     "clean": "rm -rf ./coverage",
     "coverage": "opener coverage/lcov-report/index.html",
     "lint": "eslint ./src --ext .ts",
