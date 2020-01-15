@@ -67,5 +67,9 @@
     "test:cover": "npm run test:unit -- --coverage",
     "test:unit": "jest --env node",
     "test:watch": "jest --env node --watch"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.1",
+    "@actions/github": "^2.0.1"
   }
 }
