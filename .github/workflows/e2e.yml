@@ -50,7 +50,11 @@ jobs:
       run: npm run pack
 
     - name: Test
+      id: test
       uses: ./
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         labels: 'l10n'
+
+    - name: Issue Counting
+      run: echo '${{ steps.test.outputs.count }}'
