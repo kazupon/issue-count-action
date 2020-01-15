@@ -33,10 +33,12 @@ GitHub issues count.
 
 ## Example usage
 
+```yml
 uses: kazupon/issue-count
 with:
   github-token: ${{ secrets.GITHUB_TOKEN }}
   labels: 'l10n'
+```
 
 
 ## :copyright: License
