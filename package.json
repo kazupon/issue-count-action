@@ -1,7 +1,7 @@
 {
   "name": "issue-count",
   "description": "An Action to count GitHub issues",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": {
     "name": "kazuya kawaguchi",
     "email": "kawakazu80@gmail.com"
