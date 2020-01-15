@@ -1,0 +1,15 @@
+name: 'Issue counter'
+description: 'An Action to count GitHub issues'
+inputs:
+  github-token:
+    description: 'GitHub token'
+    required: true 
+  labels:
+    description: "The label of GitHub issues, Default empty string (`''`)"
+    default: ''
+outputs:
+  count:
+    description: 'GitHub issues count'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
