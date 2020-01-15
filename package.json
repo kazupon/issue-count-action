@@ -57,15 +57,19 @@
   "scripts": {
     "build": "tsc -p .",
     "build:watch": "tsc -p . --watch",
-    "pack": "ncc build lib/index.js",
+    "pack": "npm run build && ncc build lib/index.js",
     "clean": "rm -rf ./coverage",
     "coverage": "opener coverage/lcov-report/index.html",
     "lint": "eslint ./src --ext .ts",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger",
-    "test": "npm run lint && npm run test:cover && npm run build",
+    "test": "npm run lint && npm run test:cover",
     "test:cover": "npm run test:unit -- --coverage",
     "test:unit": "jest --env node",
     "test:watch": "jest --env node --watch"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.1",
+    "@actions/github": "^2.0.1"
   }
 }
