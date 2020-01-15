@@ -1,0 +1,50 @@
+name: Unit Test
+
+on: 
+  push:
+    branches:
+      - master
+      - releases/**
+  pull_request:
+    branches:
+      - master
+      - releases/**
+
+jobs:
+  test:
+    name: Unit Testing
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+
+    - name: Get npm cache directory
+      id: npm-cache
+      run: |
+        echo "::set-output name=dir::$(npm config get cache)"
+
+    - name: Caching 
+      uses: actions/cache@v1
+      with:
+        path: ${{ steps.npm-cache.outputs.dir }}
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Setup module dependencies
+      run: npm ci
+
+    - name: Test
+      run: npm run test
+
+    - name: Uploade coverage
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }} 
+        file: ./coverage/lcov.info

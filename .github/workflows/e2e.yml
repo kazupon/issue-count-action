@@ -1,4 +1,4 @@
-name: Tests
+name: E2E Test
 
 on: 
   push:
@@ -12,7 +12,7 @@ on:
 
 jobs:
   test:
-    name: Test on ${{ matrix.os }}
+    name: E2E Test on ${{ matrix.os }}
 
     strategy:
       matrix:
@@ -22,9 +22,11 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-    - uses: actions/setup-node@v1
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
 
@@ -32,18 +34,23 @@ jobs:
       id: npm-cache
       run: |
         echo "::set-output name=dir::$(npm config get cache)"
-    - uses: actions/cache@v1
+
+    - name: Caching 
+      uses: actions/cache@v1
       with:
         path: ${{ steps.npm-cache.outputs.dir }}
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    - run: npm ci
+
+    - name: Setup module dependencies
+      run: npm ci
+
+    - name: Build
+      run: npm run pack
 
     - name: Test
-      run: npm run test
-
-    - uses: codecov/codecov-action@v1
+      uses: ./
       with:
-        token: ${{ secrets.CODECOV_TOKEN }} #required
-        file: ./coverage/lcov.info
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        labels: 'l10n'

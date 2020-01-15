@@ -2,7 +2,8 @@
 
 An Action to count GitHub issues
 
-![](https://github.com/kazupon/issue-count/workflows/Tests/badge.svg)
+![](https://github.com/kazupon/issue-count/workflows/Unit%20Test/badge.svg)
+![](https://github.com/kazupon/issue-count/workflows/E2E%20Test/badge.svg)
 [![codecov](https://codecov.io/gh/kazupon/issue-count/branch/master/graph/badge.svg)](https://codecov.io/gh/kazupon/issue-count)
 
 
