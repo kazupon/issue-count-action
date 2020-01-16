@@ -9,6 +9,7 @@ An Action to count GitHub issues
 
 ## Counting Filter
 - labels
+- state
 
 
 ## Inputs
@@ -21,7 +22,13 @@ An Action to count GitHub issues
 
 The label of GitHub issues, Default empty string (`''`).
 
-If you want to specify multiple labels, you can use as `,` delimiter (e.g. `label1,label2`)
+If you want to specify multiple labels, you can use as (`,`) delimiter (e.g. `label1,label2`)
+
+### `state`
+
+The state of GitHub issues, Default `all`.
+
+In about state that you can specify, See the [GitHub API docs](https://developer.github.com/v3/pulls/#list-pull-requests).
 
 
 ## Outputs
@@ -37,7 +44,8 @@ GitHub issues count.
 uses: kazupon/issue-count
 with:
   github-token: ${{ secrets.GITHUB_TOKEN }}
-  labels: 'l10n'
+  labels: l10n
+  state: open
 ```
 
 
