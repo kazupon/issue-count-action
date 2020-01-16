@@ -7,6 +7,9 @@ inputs:
   labels:
     description: "The label of GitHub issues, Default empty string (`''`)"
     default: ''
+  state:
+    description: 'The state of GitHub issues, Default `all`.'
+    default: 'all'
 outputs:
   count:
     description: 'GitHub issues count'

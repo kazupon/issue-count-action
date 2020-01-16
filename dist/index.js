@@ -5248,6 +5248,7 @@ const github_1 = __webpack_require__(469);
 async function run() {
     const token = core_1.getInput('github-token', { required: true });
     const labels = core_1.getInput('labels');
+    const state = core_1.getInput('state');
     const opts = {};
     const client = new github_1.GitHub(token, opts);
     const { owner, repo } = github_1.context.repo;
@@ -5255,12 +5256,15 @@ async function run() {
         labels,
         owner,
         repo,
-        state: 'all'
-    });
+        state: checkState(state) ? state : 'all'
+    }); // eslint-disable-line
     console.log(`issues count: ${issues.data.length}`);
     core_1.setOutput('count', issues.data.length.toString());
 }
 exports.default = run;
+function checkState(state) {
+    return ['open', 'all', 'closed'].includes(state);
+}
 
 
 /***/ }),
