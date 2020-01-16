@@ -25,7 +25,7 @@ afterEach(() => {
   jest.clearAllMocks()
 })
 
-test('run: basic', async () => {
+test('basic', async () => {
   // setup mocking ...
   const mockGetInput = getInput as jest.MockedFunction<typeof getInput>
   mockGetInput.mockReturnValueOnce('xxx')
@@ -47,12 +47,34 @@ test('run: basic', async () => {
   expect(mockSetOutput).toHaveBeenCalledWith('count', '2')
 })
 
-test('run: default', async () => {
+test('default', async () => {
   // setup mocking ...
   const mockGetInput = getInput as jest.MockedFunction<typeof getInput>
   mockGetInput.mockReturnValueOnce('xxx')
   mockGetInput.mockReturnValueOnce('')
   mockGetInput.mockReturnValueOnce('all')
+  const mockSetOutput = setOutput as jest.MockedFunction<typeof setOutput>
+  mockListForRepo.mockReturnValueOnce({ data: [1, 2] })
+
+  // run
+  await run()
+
+  // verify
+  expect(mockListForRepo).toHaveBeenCalledWith({
+    repo: 'issue-count',
+    owner: 'kazupon',
+    labels: '',
+    state: 'all'
+  })
+  expect(mockSetOutput).toHaveBeenCalledWith('count', '2')
+})
+
+test('state: not supported statet', async () => {
+  // setup mocking ...
+  const mockGetInput = getInput as jest.MockedFunction<typeof getInput>
+  mockGetInput.mockReturnValueOnce('xxx')
+  mockGetInput.mockReturnValueOnce('')
+  mockGetInput.mockReturnValueOnce('foo')
   const mockSetOutput = setOutput as jest.MockedFunction<typeof setOutput>
   mockListForRepo.mockReturnValueOnce({ data: [1, 2] })
 
