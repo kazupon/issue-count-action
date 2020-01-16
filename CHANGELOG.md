@@ -1,4 +1,13 @@
 
+## v0.2.0 (2020-01-16)
+
+#### :star: Features
+* [#6](https://github.com/kazupon/issue-count/pull/6) issue state filter ([@kazupon](https://github.com/kazupon))
+
+#### Committers: 1
+- kazuya kawaguchi ([@kazupon](https://github.com/kazupon))
+
+
 ## v0.1.0 (2020-01-15)
 
 #### :star: Features
