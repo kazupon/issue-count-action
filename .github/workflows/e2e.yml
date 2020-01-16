@@ -54,7 +54,8 @@ jobs:
       uses: ./
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        labels: 'l10n'
+        labels: l10n
+        state: open
 
     - name: Issue Counting
       run: echo '${{ steps.test.outputs.count }}'
