@@ -1,4 +1,4 @@
-# kazupon/issue-count
+# issue-count-action
 
 An Action to count GitHub issues
 
@@ -7,16 +7,21 @@ An Action to count GitHub issues
 [![codecov](https://codecov.io/gh/kazupon/issue-count/branch/master/graph/badge.svg)](https://codecov.io/gh/kazupon/issue-count)
 
 
-## Counting Filter
-- labels
-- state
+## :rocket: Usage
 
+```yml
+uses: kazupon/issue-count-action
+with:
+  github-token: ${{ secrets.GITHUB_TOKEN }}
+  labels: l10n
+  state: open
+```
 
-## Inputs
+## :arrow_left: Inputs
 
 ### `github-token`
 
-**Required** GitHub Token.
+**Required** GitHub token.
 
 ### `labels`
 
@@ -31,22 +36,11 @@ The state of GitHub issues, Default `all`.
 In about state that you can specify, See the [GitHub API docs](https://developer.github.com/v3/pulls/#list-pull-requests).
 
 
-## Outputs
+## :arrow_right: Outputs
 
 ### `count`
 
 GitHub issues count.
-
-
-## Example usage
-
-```yml
-uses: kazupon/issue-count
-with:
-  github-token: ${{ secrets.GITHUB_TOKEN }}
-  labels: l10n
-  state: open
-```
 
 
 ## :copyright: License

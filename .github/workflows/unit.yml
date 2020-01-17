@@ -29,15 +29,17 @@ jobs:
       run: |
         echo "::set-output name=dir::$(npm config get cache)"
 
-    - name: Caching 
+    - name: Cache npm
       uses: actions/cache@v1
+      id: cache
       with:
         path: ${{ steps.npm-cache.outputs.dir }}
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
 
-    - name: Setup module dependencies
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
 
     - name: Test

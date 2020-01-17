@@ -1,5 +1,6 @@
-name: 'Issue counter'
+name: 'issue-count-action'
 description: 'An Action to count GitHub issues'
+author: 'kazupon'
 inputs:
   github-token:
     description: 'GitHub token'

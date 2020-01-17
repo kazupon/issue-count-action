@@ -1,5 +1,5 @@
 {
-  "name": "issue-count",
+  "name": "issue-count-action",
   "description": "An Action to count GitHub issues",
   "version": "0.2.0",
   "author": {
@@ -7,7 +7,7 @@
     "email": "kawakazu80@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/kazupon/issue-count/issues"
+    "url": "https://github.com/kazupon/issue-count-action/issues"
   },
   "changelog": {
     "labels": {
@@ -41,7 +41,7 @@
     "typescript": "^3.7.4",
     "typescript-eslint-language-service": "^2.0.3"
   },
-  "homepage": "https://github.com/kazupon/issue-count#readme",
+  "homepage": "https://github.com/kazupon/issue-count-action#readme",
   "keywords": [
     "actions",
     "github",
@@ -52,7 +52,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kazupon/issue-count.git"
+    "url": "git+https://github.com/kazupon/issue-count-action.git"
   },
   "scripts": {
     "build": "tsc -p .",
