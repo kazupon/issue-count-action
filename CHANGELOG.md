@@ -1,4 +1,13 @@
 
+## v0.3.0 (2020-01-17)
+
+#### :boom: Breaking Change
+* [#8](https://github.com/kazupon/issue-count-action/pull/8) change repo name ([@kazupon](https://github.com/kazupon))
+
+#### Committers: 1
+- kazuya kawaguchi ([@kazupon](https://github.com/kazupon))
+
+
 ## v0.2.0 (2020-01-16)
 
 #### :star: Features
