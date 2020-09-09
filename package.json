@@ -39,7 +39,7 @@
     "shipjs": "^0.21.0",
     "ts-jest": "^26.0.0",
     "typescript": "^3.7.4",
-    "typescript-eslint-language-service": "^3.0.0"
+    "typescript-eslint-language-service": "^4.0.0"
   },
   "homepage": "https://github.com/kazupon/issue-count-action#readme",
   "keywords": [
