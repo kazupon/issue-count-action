@@ -37,7 +37,7 @@
     "lerna-changelog": "^1.0.0",
     "opener": "^1.5.1",
     "shipjs": "^0.23.0",
-    "ts-jest": "^26.0.0",
+    "ts-jest": "^27.0.0",
     "typescript": "^3.7.4",
     "typescript-eslint-language-service": "^4.0.0"
   },
