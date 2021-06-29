@@ -1,4 +1,13 @@
 
+## v1.0.0 (2021-06-29)
+
+#### :boom: Breaking Change
+* [#59](https://github.com/kazupon/issue-count-action/pull/59) break: drop node v10 ([@kazupon](https://github.com/kazupon))
+
+#### Committers: 1
+- kazuya kawaguchi ([@kazupon](https://github.com/kazupon))
+
+
 ## v0.3.0 (2020-01-17)
 
 #### :boom: Breaking Change
