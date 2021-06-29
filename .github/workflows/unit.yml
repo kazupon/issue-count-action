@@ -24,22 +24,7 @@ jobs:
       with:
         node-version: 12
 
-    - name: Get npm cache directory
-      id: npm-cache
-      run: |
-        echo "::set-output name=dir::$(npm config get cache)"
-
-    - name: Cache npm
-      uses: actions/cache@v2
-      id: cache
-      with:
-        path: ${{ steps.npm-cache.outputs.dir }}
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-
     - name: Install dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
 
     - name: Test
