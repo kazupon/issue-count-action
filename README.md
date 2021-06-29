@@ -2,9 +2,8 @@
 
 An Action to count GitHub issues
 
-![](https://github.com/kazupon/issue-count/workflows/Unit%20Test/badge.svg)
-![](https://github.com/kazupon/issue-count/workflows/E2E%20Test/badge.svg)
-[![codecov](https://codecov.io/gh/kazupon/issue-count/branch/master/graph/badge.svg)](https://codecov.io/gh/kazupon/issue-count)
+[![Unit Test](https://github.com/kazupon/issue-count-action/actions/workflows/unit.yml/badge.svg)](https://github.com/kazupon/issue-count-action/actions/workflows/unit.yml)
+[![E2E Test](https://github.com/kazupon/issue-count-action/actions/workflows/e2e.yml/badge.svg)](https://github.com/kazupon/issue-count-action/actions/workflows/e2e.yml)
 
 
 ## :rocket: Usage
