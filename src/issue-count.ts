@@ -1,7 +1,7 @@
 import { getInput, setOutput } from '@actions/core'
 import { context, GitHub } from '@actions/github'
 
-export default async function run () {
+export default async function run (): Promise<void> {
   const token = getInput('github-token', { required: true })
   const labels = getInput('labels')
   const state = getInput('state')
