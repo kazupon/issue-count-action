@@ -33,7 +33,7 @@
     "eslint-plugin-vue-libs": "^4.0.0",
     "jest": "^27.0.6",
     "jest-watch-typeahead": "^0.6.4",
-    "@kazupon/lerna-changelog": "^3.0.0",
+    "@kazupon/lerna-changelog": "^4.0.0",
     "opener": "^1.5.2",
     "shipjs": "^0.23.3",
     "ts-jest": "^27.0.3",
