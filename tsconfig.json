@@ -65,10 +65,5 @@
   },
   "include": [
     "src/*.ts"
-  ],
-  "plugins": [
-    {
-      "name": "typescript-eslint-language-service"
-    }
   ]
 }
