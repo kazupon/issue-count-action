@@ -45,7 +45,7 @@ jobs:
 
       - name: Sync changelog from github releases
         run: |
-          npm run changelog --tag=${{ steps.split.outputs._2 }}
+          npm run changelog -- --tag=${{ steps.split.outputs._2 }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
