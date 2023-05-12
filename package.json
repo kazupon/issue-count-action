@@ -55,7 +55,7 @@
     "test:watch": "jest --env node --watch"
   },
   "dependencies": {
-    "@actions/core": "^1.4.0",
+    "@actions/core": "^1.10.0",
     "@actions/github": "^2.0.1"
   }
 }
