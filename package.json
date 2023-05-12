@@ -17,7 +17,7 @@
     "@zeit/ncc": "^0.22.3",
     "bumpp": "^9.1.0",
     "changelogithub": "^0.12.7",
-    "eslint": "^7.29.0",
+    "eslint": "^8.0.0",
     "eslint-plugin-vue-libs": "^4.0.0",
     "gh-changelogen": "^0.2.8",
     "jest": "^27.0.6",
