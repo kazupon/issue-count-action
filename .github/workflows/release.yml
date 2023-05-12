@@ -52,6 +52,6 @@ jobs:
       - name: Commit changelog
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          branch: next
+          branch: master
           file_pattern: 'CHANGELOG.md'
           commit_message: 'chore: generate changelog'
