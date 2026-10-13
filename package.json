@@ -15,7 +15,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.5",
     "@typescript-eslint/parser": "^5.59.5",
     "@zeit/ncc": "^0.22.3",
-    "bumpp": "^9.1.0",
+    "bumpp": "^12.0.0",
     "changelogithub": "^0.13.0",
     "eslint": "^8.40.0",
     "gh-changelogen": "^0.2.8",
